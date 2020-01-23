@@ -1,4 +1,4 @@
- // Pin connection
+// Pin connection
 // Output
 // P10 - Blue LED
 // P11 - Green LED
@@ -43,9 +43,10 @@ void loop() {
   int pin3State = digitalRead(pin3);
   int pin4State = digitalRead(pin4);
 
+  delay(1000);
   //On state
   //Red blinks @10Hz
-  if (pin4State = HIGH && pin3State = LOW && pin2State = LOW )
+  if (pin4State == HIGH && pin3State == LOW && pin2State == LOW )
   {
     // Reset sleep and diagnos 
     sleep = 0;
@@ -58,16 +59,19 @@ void loop() {
   }
   //Off state
   //Does nothing
-  if (pin4State = LOW && pin3State = LOW && pin2State = LOW )
+  if (pin4State == LOW && pin3State == LOW && pin2State == LOW )
   {
     // Reset sleep and diagnos
       sleep = 0;
       diagnos = 0;
+      digitalWrite(red, LOW);
+      digitalWrite(blue, LOW);
+      digitalWrite(green, LOW);
   }
 
   //Run state
   //Green fades then blink 0.5s
-  if (pin4State = LOW && pin3State = HIGH && pin2State = LOW )
+  if (pin4State == LOW && pin3State == HIGH && pin2State == LOW )
   {
     // Reset sleep
     sleep = 0;
@@ -92,7 +96,7 @@ void loop() {
 
   //Sleep State
   //Blue blink  @4Hz for 1 sec fade for 1 sec
-  if(pin4State = LOW && pin3State = LOW && pin2State = HIGH && sleep = 0)
+  if(pin4State == LOW && pin3State == LOW && pin2State == HIGH && sleep == 0)
   {  
     //Reset diagnos
     diagnos = 0;
@@ -108,6 +112,7 @@ void loop() {
     {
       analogWrite(blue, brightness);
       brightness = brightness - fadeAmount;
+      delay(40);
     }
     brightness = 250;
     sleep = 1;
@@ -115,7 +120,7 @@ void loop() {
 
   //Diagnostic State 
   //Red blinks N number of times for N list of problems 
-  if(pin4State = HIGH && pin3State = LOW && pin2State = HIGH && diagnos = 0)
+  if(pin4State == HIGH && pin3State == LOW && pin2State == HIGH && diagnos == 0)
   { 
     // Reset sleep
     sleep = 0;
