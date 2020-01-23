@@ -119,7 +119,7 @@ void loop() {
   { 
     // Reset sleep
     sleep = 0;
-    int N = 5
+    int N = 5;
     for(int count = 0; count < N; count++)
     {
       digitalWrite(red, HIGH);
