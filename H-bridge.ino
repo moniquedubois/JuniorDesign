@@ -30,8 +30,8 @@ void loop() {
 //  delay(8000);
 
 //  // backwards
-//  digitalWrite(s3, LOW);
-//  digitalWrite(s4, HIGH);
+//  digitalWrite(s4, LOW);
+//  digitalWrite(s3, HIGH);
 //  digitalWrite(s2, LOW);
 //  digitalWrite(s1, HIGH);
 
