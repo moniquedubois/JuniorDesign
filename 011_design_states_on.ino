@@ -1,7 +1,7 @@
 int pink = 15;
 int yellow = 12;
 int white = 10;
-int brightness = 240;
+int brightness = 250;
 int fadeAmount = 6;
 
 void setup() {
