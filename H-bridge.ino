@@ -1,11 +1,11 @@
-const int s1 = 2;
+const int s1 = 7;
 const int s2 = 3;
 const int s3 = 4;
 const int s4 = 5;
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(2, OUTPUT);
+  pinMode(7, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
